@@ -18,11 +18,13 @@ import {
   resetCameraImage,
   selectCameraImage,
 } from "../features/camera/cameraSlice";
+import { selectUser } from "../features/user/userSlice";
 import { db, storage } from "../firebase";
 import "../styles/preview.css";
 
 function Preview() {
   const cameraImage = useSelector(selectCameraImage);
+  const user = useSelector(selectUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -36,6 +38,8 @@ function Preview() {
     dispatch(resetCameraImage());
     navigate("/", { replace: true });
   };
+
+  console.log(user);
 
   const sendPost = () => {
     const id = uuidv4();
@@ -57,11 +61,10 @@ function Preview() {
           .then((url) => {
             db.collection("posts").add({
               imageUrl: url,
-              userName: "Developer",
+              userName: user.userName,
               read: false,
               timestamp: serverTimestamp(),
-              profilePic:
-                "https://media.istockphoto.com/photos/first-person-point-of-view-of-a-woman-paddling-on-a-stand-up-paddle-picture-id1288844330?b=1&k=20&m=1288844330&s=170667a&w=0&h=nckXG0H5kPDbgDpC8iTObsiqG7Jwt6CeLuJ2WxdOTp4=",
+              profilePic: user.profilePic,
             });
             navigate("/chats", { replace: true });
           });

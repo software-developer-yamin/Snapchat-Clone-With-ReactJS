@@ -6,3 +6,22 @@
   background-color: #fefc01;
   height: 100vh;
 }
+
+.app_logo {
+  height: 100px;
+  object-fit: contain;
+}
+
+.app_body {
+  background: url("./images/background_mobile.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding:100px;
+}
+
+.app_bodyBackground {
+  background-color: white;
+}
+
+

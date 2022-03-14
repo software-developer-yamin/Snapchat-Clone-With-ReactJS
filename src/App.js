@@ -7,7 +7,7 @@ import ChatView from "./components/ChatView.jsx";
 import Login from "./components/Login";
 import Preview from "./components/Preview";
 import WebcamCapture from "./components/WebcamCapture";
-import { login, selectUser,logout } from "./features/user/userSlice";
+import { login, logout, selectUser } from "./features/user/userSlice";
 import { auth } from "./firebase";
 
 function App() {
@@ -27,21 +27,26 @@ function App() {
       }
     })
   }, [dispatch]);
-  
+
   return (
     <div className="app">
       {
         !user ? (
           <Login />
         ) : (
-          <main className="app_body">
-            <Routes>
-              <Route path="/" element={<WebcamCapture />} />
-              <Route path="preview" element={<Preview />} />
-              <Route path="chats" element={<Chats />} />
-              <Route path="chats/view" element={<ChatView />} />
-            </Routes>
-          </main>
+          <>
+            <img className="app_logo" src="https://play-lh.googleusercontent.com/KxeSAjPTKliCErbivNiXrd6cTwfbqUJcbSRPe_IBVK_YmwckfMRS1VIHz-5cgT09yMo" alt="" />
+            <main className="app_body">
+              <section className="app_bodyBackground">
+                <Routes>
+                  <Route path="/" element={<WebcamCapture />} />
+                  <Route path="preview" element={<Preview />} />
+                  <Route path="chats" element={<Chats />} />
+                  <Route path="chats/view" element={<ChatView />} />
+                </Routes>
+              </section>
+            </main>
+          </>
         )
       }
     </div>
