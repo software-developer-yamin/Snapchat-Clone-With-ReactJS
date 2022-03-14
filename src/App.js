@@ -1,11 +1,17 @@
+import { Route, Routes } from "react-router-dom";
 import './App.css';
-import WebcamCapture from './components/WebcamCapture';
+import Preview from "./components/Preview";
+import WebcamCapture from "./components/WebcamCapture";
 
 function App() {
   return (
     <div className="app">
-      <h1>Hello World!</h1>
-      <WebcamCapture />
+      <main className="app_body">
+        <Routes>
+          <Route path="/" element={<WebcamCapture />} />
+          <Route path="preview" element={<Preview />} />
+        </Routes>
+      </main>
     </div>
   );
 }

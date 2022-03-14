@@ -1,10 +1,12 @@
 import { RadioButtonUnchecked } from "@mui/icons-material";
 import { useCallback, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import Webcam from "react-webcam";
+import { setCameraImage } from "../features/camera/cameraSlice";
 
 function WebcamCapture() {
   const webcamRef = useRef(null);
-  const [image, setImage] = useState(null);
+  const dispatch = useDispatch();
 
   const videoConstrainer = {
     width: 250,
@@ -13,8 +15,8 @@ function WebcamCapture() {
   };
 
   const capture = useCallback(() => {
-    const imageSrc = webcamRef.current.getScreenshot();
-    setImage(imageSrc);
+       const imageSrc = webcamRef.current.getScreenshot();
+       dispatch(setCameraImage(imageSrc));
   }, [webcamRef]);
 
   return (
@@ -32,7 +34,6 @@ function WebcamCapture() {
         onClick={capture}
         fontSize="large"
       />
-      <img src={image} alt="" />
     </section>
   );
 }
