@@ -39,8 +39,6 @@ function Preview() {
     navigate("/", { replace: true });
   };
 
-  console.log(user);
-
   const sendPost = () => {
     const id = uuidv4();
     const uploadTask = storage
