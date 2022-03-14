@@ -13,7 +13,7 @@ const userSlice = createSlice({
           logout: (state) => {
                state.user = null;
           },
-          selectedImage: (state, action) => {
+          selectImage: (state, action) => {
                state.selectedImage = action.payload;
           },
           resetImage: (state) => {
@@ -22,7 +22,7 @@ const userSlice = createSlice({
      },
 });
 
-export const { login, logout, selectedImage, resetImage } = userSlice.actions;
+export const { login, logout, selectImage, resetImage } = userSlice.actions;
 
 export const selectUser = (state) => state.user.user;
 export const selectSelectedImage = (state) => state.user.selectedImage;

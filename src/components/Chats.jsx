@@ -41,6 +41,7 @@ function Chats() {
           }) => (
             <Chat
               key={id}
+              id={id}
               profilePic={profilePic}
               userName={userName}
               imageUrl={imageUrl}
