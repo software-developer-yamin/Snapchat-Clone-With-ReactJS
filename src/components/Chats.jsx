@@ -5,6 +5,8 @@ import { db } from "../firebase";
 import "../styles/Chats.css";
 import Chat from "./Chat";
 
+
+
 function Chats() {
   const [posts, setPosts] = useState([]);
 

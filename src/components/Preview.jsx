@@ -61,7 +61,7 @@ function Preview() {
               read: false,
               timestamp: serverTimestamp(),
               profilePic:
-                "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.topresume.com%2Fcareer-advice%2Fsoftware-developer-job-description&psig=AOvVaw2qydoQLR8L8hDI2ejfsgM7&ust=1647335549761000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJCumqahxfYCFQAAAAAdAAAAABAD",
+                "https://media.istockphoto.com/photos/first-person-point-of-view-of-a-woman-paddling-on-a-stand-up-paddle-picture-id1288844330?b=1&k=20&m=1288844330&s=170667a&w=0&h=nckXG0H5kPDbgDpC8iTObsiqG7Jwt6CeLuJ2WxdOTp4=",
             });
             navigate("/chats", { replace: true });
           });
