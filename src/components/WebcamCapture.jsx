@@ -1,4 +1,4 @@
-import { RadioButtonUnchecked } from "@mui/icons-material";
+import { RadioButtonChecked } from "@mui/icons-material";
 import { useCallback, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -33,7 +33,7 @@ function WebcamCapture() {
         width={videoConstrainer.width}
         videoConstraints={videoConstrainer}
       />
-      <RadioButtonUnchecked
+      <RadioButtonChecked
         className="webcamCapture_button"
         onClick={capture}
         fontSize="large"

@@ -9,4 +9,5 @@
      transform: translate(-50%, -50%);
      cursor: pointer;
      color: white;
+     font-size: 45px !important;
 }
